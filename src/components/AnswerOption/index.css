@@ -1,0 +1,44 @@
+.answer-option {
+  box-sizing: border-box;
+  border: 1px solid #DDDDDD;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000000;
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.answer-option:active {
+  opacity: 0.5;
+}
+
+.answer-option--selected {
+  background-color: #EBF9EB;
+  box-sizing: border-box;
+  border: 1px solid #01AB01;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #01AB01;
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.answer-option--wrong {
+  background-color: #FFEDEB;
+  box-sizing: border-box;
+  border: 1px solid #FF1F02;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #FF1F02;
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+}

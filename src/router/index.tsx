@@ -1,6 +1,5 @@
 import {
-  createBrowserRouter,
-  RouterProvider,
+  createBrowserRouter
 } from 'react-router-dom';
 import Main from '../views/Main';
 import LessonSummary from '../views/LessonSummary';

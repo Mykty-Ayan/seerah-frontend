@@ -1,0 +1,21 @@
+.begin-test-button {
+  height: 38px;
+  background-color: #01AB01;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  position: fixed;
+  bottom: 16px;
+  width: calc(100% - 32px);
+  left: 16px;
+}
+
+.begin-test-button:active {
+  opacity: 0.5;
+}

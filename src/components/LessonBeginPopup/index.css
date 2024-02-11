@@ -1,0 +1,114 @@
+.lesson-begin-popup {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  width: 160px;
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  box-sizing: border-box;
+  padding: 8px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease-out;
+}
+
+.lesson-begin-popup--hidden {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 160px;
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  box-sizing: border-box;
+  padding: 8px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease-out;
+}
+
+.lesson-begin-popup__triangle {
+  position: absolute;
+  top: -12px;
+  left: 4px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 8px 13.9px 8px;
+  border-color: transparent transparent #FFFFFF transparent;
+  transform: rotate(0deg);
+}
+
+.lesson-begin-popup__lesson-name {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: black;
+}
+
+.lesson-begin-popup__lesson-description {
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #666666;
+}
+
+.lesson-begin-popup__previous-lesson-not-learned {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+  color: #FF1F02;
+}
+
+.lesson-begin-popup__button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0.5px solid #01AB01;
+  border-radius: 4px;
+  width: 100%;
+  height: 26px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #01AB01;
+  cursor: pointer;
+}
+
+.lesson-begin-popup__button:active {
+  opacity: 0.5;
+}
+
+.lesson-begin-popup__button--disabled {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0.5px solid #BBBBBB;
+  border-radius: 4px;
+  width: 100%;
+  height: 26px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #BBBBBB;
+  cursor: pointer;
+}

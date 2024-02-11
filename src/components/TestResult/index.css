@@ -55,6 +55,7 @@ circle {
 }
 
 svg {
+  transform: scale(1.10);
   position: absolute;
   top: 0;
   left: 0;

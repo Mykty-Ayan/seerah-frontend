@@ -1,0 +1,93 @@
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 46px;
+  background-color: white;
+  -webkit-box-shadow: 0px -2px 8px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px -2px 8px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px -2px 8px 0px rgba(0, 0, 0, 0.08);
+}
+
+.bottom-menu__home {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bottom-menu__home:active {
+  opacity: 0.5;
+}
+
+.bottom-menu__home-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+  color: #01AB01;
+}
+
+.bottom-menu__my-iman {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bottom-menu__my-iman:active {
+  opacity: 0.5;
+}
+
+.bottom-menu__my-iman-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+  color: #000000;
+}
+
+.bottom-menu__settings {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bottom-menu__settings:active {
+  opacity: 0.5;
+}
+
+.bottom-menu__settings-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+  color: #000000;
+}

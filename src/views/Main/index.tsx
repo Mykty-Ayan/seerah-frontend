@@ -5,7 +5,6 @@ import LessonButton from '../../components/LessonButton';
 import { IChapter, ILesson } from '../../interfaces';
 import React, { Fragment, useState } from 'react';
 import ChapterDescription from '../../components/ChapterDescription';
-import BottomMenu from '../../components/BottomMenu';
 
 function Main() {
   const lessons = useAppSelector((state) => state.lessons.lessons);
@@ -60,7 +59,6 @@ function Main() {
         coordinates={coordinates}
         isVisible={isPopupVisible}
       />
-      <BottomMenu />
     </>
   )
 }

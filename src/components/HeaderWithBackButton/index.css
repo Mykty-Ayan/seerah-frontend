@@ -4,6 +4,9 @@
   justify-content: space-between;
   align-items: center;
   height: 40px;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .header-with-back-button__back-button {

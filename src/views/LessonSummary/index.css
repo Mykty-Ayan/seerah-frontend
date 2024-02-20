@@ -2,5 +2,24 @@
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  padding-top: 16px;
+  box-sizing: border-box;
+  padding: 16px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.lesson-summary__image {
+  box-sizing: border-box;
+  padding: 24px;
+  padding-bottom: 16px;
+  width: 100%;
+  transition: all 1s ease-out;
+}
+
+.lesson-summary__image--wide {
+  box-sizing: border-box;
+  padding: 4px;
+  padding-bottom: 16px;
+  width: 100%;
+  transition: all 1s ease-out;
 }

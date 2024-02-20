@@ -5,6 +5,7 @@ import LessonButton from '../../components/LessonButton';
 import { IChapter, ILesson } from '../../interfaces';
 import React, { Fragment, useState } from 'react';
 import ChapterDescription from '../../components/ChapterDescription';
+import LessonBlock from '../../components/LessonBlock';
 
 function Main() {
   const lessons = useAppSelector((state) => state.lessons.lessons);
@@ -15,8 +16,8 @@ function Main() {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, chapter: IChapter, lesson: ILesson) => {
     const rect = (event.target as HTMLDivElement).getBoundingClientRect();
-    const x = rect.left + window.scrollX + 20;
-    const y = rect.top + window.scrollY + 80;
+    const x = rect.left + window.scrollX + 15;
+    const y = rect.top + window.scrollY + 88 + 26;
 
     setCoordinates({ x, y });
     setSelectedChapter(chapter);
@@ -36,14 +37,14 @@ function Main() {
                   {
                     chapter.lessons.map((lesson) => {
                       return (
-                        <LessonButton
-                          key={lesson.id}
-                          onClick={handleClick}
-                          chapter={chapter}
-                          lesson={lesson}
-                          isFinished={lesson.isFinished}
-                          leftOffset={lesson.leftOffset}
-                        />
+                        <LessonBlock key={lesson.id} header={lesson.name} leftOffset={lesson.leftOffset} chapterId={chapter.id}>
+                          <LessonButton
+                            onClick={handleClick}
+                            chapter={chapter}
+                            lesson={lesson}
+                            isFinished={lesson.isFinished}
+                          />
+                        </LessonBlock>
                       )
                     })
                   }

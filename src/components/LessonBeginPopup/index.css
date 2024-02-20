@@ -2,14 +2,15 @@
   visibility: visible;
   opacity: 1;
   position: absolute;
-  width: 160px;
-  border-radius: 4px;
+  left: 24px;
+  right: 24px;
+  border-radius: 16px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
+  row-gap: 8px;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 20px;
   -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
@@ -20,14 +21,15 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  width: 160px;
-  border-radius: 4px;
+  left: 24px;
+  right: 24px;
+  border-radius: 16px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
+  row-gap: 8px;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 20px;
   -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
@@ -51,46 +53,55 @@
   padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 16px;
+  line-height: 20px;
   color: black;
 }
 
 .lesson-begin-popup__lesson-description {
   margin: 0;
-  margin-bottom: 4px;
   padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  color: #666666;
-}
-
-.lesson-begin-popup__previous-lesson-not-learned {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 8px;
-  line-height: 10px;
-  color: #FF1F02;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(30, 30, 30, 0.75);
 }
 
 .lesson-begin-popup__button {
   margin: 0;
+  margin-top: 14px;
   padding: 0;
   box-sizing: border-box;
-  border: 0.5px solid #01AB01;
-  border-radius: 4px;
+  border: none;
+  border-radius: 100px;
   width: 100%;
-  height: 26px;
+  height: 46px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 10px;
-  color: #01AB01;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
   cursor: pointer;
+  background-color: #018850;
+}
+
+.lesson-begin-popup__button--repeat {
+  margin: 0;
+  margin-top: 14px;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(30, 30, 30, 0.05);
+  border-radius: 100px;
+  width: 100%;
+  height: 46px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #018850;
+  cursor: pointer;
+  background-color: #DCF5EA;
 }
 
 .lesson-begin-popup__button:active {
@@ -99,16 +110,29 @@
 
 .lesson-begin-popup__button--disabled {
   margin: 0;
+  margin-top: 14px;
   padding: 0;
   box-sizing: border-box;
-  border: 0.5px solid #BBBBBB;
-  border-radius: 4px;
+  border: 1px solid #E7E7EB;
+  border-radius: 100px;
   width: 100%;
-  height: 26px;
+  height: 46px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #C7C7CB;
+  cursor: pointer;
+  background-color: #F2F2F7;
+}
+
+.lesson-begin-popup__previous-lesson-not-learned {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 10px;
-  line-height: 10px;
-  color: #BBBBBB;
-  cursor: pointer;
+  font-size: 12px;
+  line-height: 14px;
+  color: #C72041;
+  text-align: center;
 }

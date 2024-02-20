@@ -2,20 +2,21 @@
   position: relative;
   background-color: white;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
   box-sizing: border-box;
-  border: 1px solid #01AB01;
+  border: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   margin: 0;
   padding: 0;
   cursor: pointer;
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
-  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.04);
 }
 
 .lesson-button:active {
@@ -24,26 +25,82 @@
 
 .lesson-button--finished {
   position: relative;
-  background-color: #01AB01;
+  background-color: white;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
   box-sizing: border-box;
-  border: 1px solid #01AB01;
+  border: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   margin: 0;
   padding: 0;
   cursor: pointer;
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
-  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
 .lesson-button--finished:active {
   opacity: 0.5;
+}
+
+.lesson-button--unavailable {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lesson-button--unavailable:active {
+  opacity: 0.5;
+}
+
+.lesson-button__inner-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #018850;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.lesson-button__inner-circle--finished {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #DCF5EB;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.lesson-button__inner-circle--unavailable {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: rgba(30, 30, 30, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
 .lesson-button__checkmark {

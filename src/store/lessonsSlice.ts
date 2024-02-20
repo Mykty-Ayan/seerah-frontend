@@ -9,15 +9,15 @@ const initialState: IInitialState = {
   lessons: [
     {
       id: 1,
-      part: 'Тарау 1, бөлім 1',
+      part: '1-ТАРАУ',
       title: 'ХАЗІРЕТ МҰХАММЕДТІҢ (ﷺ) ДҮНИЕГЕ КЕЛУІ және БАЛАЛЫҚ ШАҒЫ',
       lessons: [
         {
           id: 1,
           isFinished: true,
-          name: 'Lesson 1 name',
+          name: 'Кіріспе',
           description: 'Lesson 1 description',
-          leftOffset: 45,
+          leftOffset: 25,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -119,9 +119,9 @@ const initialState: IInitialState = {
         {
           id: 2,
           isFinished: false,
-          name: 'Lesson 2 name',
+          name: 'Пайғамбарымыздың (ﷺ) шежіресі',
           description: 'Lesson 2 description',
-          leftOffset: 37,
+          leftOffset: 17,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -223,9 +223,9 @@ const initialState: IInitialState = {
         {
           id: 3,
           isFinished: false,
-          name: 'Lesson 3 name',
+          name: 'Хазірет Мұхаммедтің (ﷺ) дүниеге келуі',
           description: 'Lesson 3 description',
-          leftOffset: 29,
+          leftOffset: 12,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -327,9 +327,9 @@ const initialState: IInitialState = {
         {
           id: 4,
           isFinished: false,
-          name: 'Lesson 4 name',
+          name: 'Алла елшісінің (ﷺ) балалық шағы',
           description: 'Lesson 4 description',
-          leftOffset: 37,
+          leftOffset: 19,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -431,9 +431,9 @@ const initialState: IInitialState = {
         {
           id: 5,
           isFinished: false,
-          name: 'Lesson 5 name',
+          name: 'Піл оқиғасы',
           description: 'Lesson 5 description',
-          leftOffset: 45,
+          leftOffset: 24,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -536,15 +536,15 @@ const initialState: IInitialState = {
     },
     {
       id: 2,
-      part: 'Тарау 1, бөлім 2',
-      title: 'Lorem ipsum dolor sit amet consectetur. Ornare massa id non diam pretium purus justo.',
+      part: '2-ТАРАУ',
+      title: 'АЛЛА ЕЛШІСІНІҢ (ﷺ) ЖАСТЫҚ ШАҒЫ ЖӘНЕ ҮЙЛЕНУІ',
       lessons: [
         {
           id: 1,
           isFinished: true,
-          name: 'Lesson 1 name',
+          name: 'Хиджаздан тыс сапарлар',
           description: 'Lesson 1 description',
-          leftOffset: 45,
+          leftOffset: 10,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -646,9 +646,9 @@ const initialState: IInitialState = {
         {
           id: 2,
           isFinished: false,
-          name: 'Lesson 2 name',
+          name: 'Оның (ﷺ) сауда операциялары',
           description: 'Lesson 2 description',
-          leftOffset: 52,
+          leftOffset: 19,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -750,9 +750,9 @@ const initialState: IInitialState = {
         {
           id: 3,
           isFinished: false,
-          name: 'Lesson 3 name',
+          name: 'Мұхаммед (ﷺ) пен Хадиджаның (Алла оған разы болсын) некесі',
           description: 'Lesson 3 description',
-          leftOffset: 59,
+          leftOffset: 24,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -854,9 +854,9 @@ const initialState: IInitialState = {
         {
           id: 4,
           isFinished: false,
-          name: 'Lesson 4 name',
+          name: 'Қағбаны қайта құру кезіндегі дау',
           description: 'Lesson 4 description',
-          leftOffset: 52,
+          leftOffset: 18,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [
@@ -958,9 +958,9 @@ const initialState: IInitialState = {
         {
           id: 5,
           isFinished: false,
-          name: 'Lesson 5 name',
+          name: 'Піл оқиғасы',
           description: 'Lesson 5 description',
-          leftOffset: 45,
+          leftOffset: 9,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
           questions: [

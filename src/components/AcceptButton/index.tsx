@@ -1,16 +1,18 @@
 import './index.css';
 
 type AcceptButtonProps = {
+  isActive: boolean;
 };
 
-const AcceptButton = ({ }: AcceptButtonProps) => {
+const AcceptButton = ({ isActive }: AcceptButtonProps) => {
   return (
     <>
       <button
         type='button'
-        className='accept-button'
+        className={isActive ? 'accept-button' : 'accept-button--disabled'}
+        disabled={!isActive}
       >
-        Жалғастыру
+        Жауапты тексеру
       </button>
     </>
   )

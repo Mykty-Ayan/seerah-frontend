@@ -1,9 +1,9 @@
 .chapter-description {
-  background-color: #FEF5E8;
+  background-color: rgba(246, 245, 247, 1);
   border-radius: 10px;
   box-sizing: border-box;
   padding: 16px;
-  border: 1px solid rgba(30, 30, 30, 0.25);
+  border: 1px solid rgba(30, 30, 30, 0.15);
   display: flex;
   flex-direction: column;
   row-gap: 8px;
@@ -13,10 +13,10 @@
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #006299;
+  color: #00804B;
 }
 
 .chapter-description__description {
@@ -24,7 +24,7 @@
   padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1E1E1E;
 }

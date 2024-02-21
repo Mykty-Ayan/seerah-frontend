@@ -20,6 +20,7 @@ export interface IQuestion {
   id: number;
   questionText: string;
   answerOptions: IAnswerOption[];
+  isMultipleAnswers: boolean;
 }
 
 export interface IAnswerOption {

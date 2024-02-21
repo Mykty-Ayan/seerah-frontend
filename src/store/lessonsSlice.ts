@@ -24,6 +24,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -55,6 +56,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -86,6 +88,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -123,11 +126,14 @@ const initialState: IInitialState = {
           description: 'Lesson 2 description',
           leftOffset: 17,
           extendedDescription: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
-          summary: 'Lorem ipsum dolor sit amet consectetur. Nec enim neque at massa amet mattis mi diam. Velit eu viverra odio nunc. Eu dignissim id consectetur ac nulla.',
+          summary: `Алланың қалауымен, бүгінгі күннен бастап Пайғамбарымыздың (ﷺ) сирасын бөлімдерге бөліп баяндауды бастаймыз. Қасиетті Рамазан айының қарсаңында екі дүние сардары, адамзат баласының ең асылы, адамдарды надандықтың түнегінен ақиқат пен бірқұдайылықтың жарығына шығарған осынау таңғаларлық адамды - біздің сүйікті Пайғамбарымыз Мұхаммедті  (ﷺ)  бізге сыйлай отырып, Алла Тағаланың  қандай рақымшылық танытқанын еске түсіру өте маңызды.
+
+Осы рақымшылық үшін Аллаға разылығымызды әртүрлі жолдармен көрсетуге болады. Өкінішке орай, қазіргі таңда қоғамда орын алып отырған коронавирус індетіне байланысты үстіміздегі жылда Рамазан айы ерекше болайын деп тұр. Әр істе бір хайыр бар дегендей, карантинде отырып-ақ Алла разылығы үшін оразамызды ұстап, Алла Тағаламызға мадақ айтып,  Алла Елшісіне (ﷺ) салауатымызды лайықты түрде үзбей айтып жүреміз, бірақ бұл разылықтың тек қана сыртқы жора болмауы елеулі. Пайғамбарымыздың (ﷺ) шариғатқа енгізгенін және пәк сүннетін ұстануды ішкі жан-дүниемен шексіз қастерлеу әлдеқайда маңыздырақ.  Пайғамбарымыздың (ﷺ) сирасын – өмірбаянын толықтай үйренбей сүннетті ұстану мүмкін емес. Шейх Мұхаммад Таки Усмани былай жазған: «Негізінде Мәртебелі Пайғамбарымызға (ﷺ)қатысты маңыздысы, — біріншіден, оның үйреткенін ұстану, ал екіншіден, оның игі сирасын әрбір мұсылманға, ерте балалық кезден мұсылмандардың жүректерінде сақталуына жеткізу, жанұя мүшелерінің өмірін оған сәйкестіріп құруларын әрі оны әлем тарихындағы адамзат тәлімінің аса көрнекті мысалы ретінде қастерлеуге үйрету — және осының бәрі  ең үлкен сүйіспеншілік әрі дәріптеумен, әлдебір ресми жоралармен емес, нағыз сүннетті ұстану арқылы жеткізілуі тиіс.  Бұл әлдебір ресми шеру не болмаса басылымдар шығару арқылы іске аспауы керек. Бұл тұрақты және жүйелі жігерді, мақсатты бағытталған оқу бағдарламасы мен дайындықты талап етеді»[1].`,
           questions: [
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -159,6 +165,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -190,11 +197,12 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: true,
               answerOptions: [
                 {
                   id: 1,
                   answerText: 'Answer 1',
-                  isRight: false,
+                  isRight: true,
                 },
                 {
                   id: 2,
@@ -232,6 +240,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -263,6 +272,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -294,6 +304,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -336,6 +347,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -367,6 +379,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -398,6 +411,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -440,6 +454,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -471,6 +486,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -502,6 +518,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -551,6 +568,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -582,6 +600,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -613,6 +632,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -655,6 +675,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -686,6 +707,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -717,6 +739,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -759,6 +782,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -790,6 +814,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -821,6 +846,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -863,6 +889,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -894,6 +921,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -925,6 +953,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -967,6 +996,7 @@ const initialState: IInitialState = {
             {
               id: 1,
               questionText: 'Question 1 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -998,6 +1028,7 @@ const initialState: IInitialState = {
             {
               id: 2,
               questionText: 'Question 2 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,
@@ -1029,6 +1060,7 @@ const initialState: IInitialState = {
             {
               id: 3,
               questionText: 'Question 3 text',
+              isMultipleAnswers: false,
               answerOptions: [
                 {
                   id: 1,

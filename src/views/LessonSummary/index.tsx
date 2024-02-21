@@ -2,7 +2,7 @@ import './index.css';
 import { useAppSelector } from '../../store/hooks';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ILesson } from '../../interfaces';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import LessonSummaryBlock from '../../components/LessonSummaryBlock';
 import video from '/video.jpg';
 import HeaderWithBackButton from '../../components/HeaderWithBackButton';
@@ -13,6 +13,7 @@ const LessonSummary = () => {
   const [lesson, setLesson] = React.useState<ILesson | null>(null);
   const [bottomReached, setBottomReached] = useState(false);
   let { chapterId, lessonId } = useParams();
+  const scrollElRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   useEffect(() => {
     if (chapterId && lessonId) {
@@ -25,6 +26,14 @@ const LessonSummary = () => {
       }
     }
   }, []);
+  useEffect(() => {
+    if (scrollElRef.current) {
+      const noScrollbar = scrollElRef.current.scrollHeight == scrollElRef.current.clientHeight;
+      if (noScrollbar) {
+        setBottomReached(true);
+      }
+    }
+  }, [lesson]);
   function handleClick() {
     navigate(`/chapters/${chapterId}/tests/${lessonId}`);
   }
@@ -47,17 +56,15 @@ const LessonSummary = () => {
       }
       {
         lesson && (
-          <>
+          <div className='lesson-summary__wrapper'>
             <img className={bottomReached ? 'lesson-summary__image--wide' : 'lesson-summary__image'} src={video} alt="lesson video" />
-            <div className='lesson-summary' onScroll={(event) => handleScroll(event)}>
-              <LessonSummaryBlock header='Сипаттама:' text={lesson.extendedDescription} />
-              <LessonSummaryBlock header='Конспектісі:' text={lesson.summary} />
-              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas labore repellendus nihil cupiditate. Possimus et itaque consequatur? Numquam fugiat quo deserunt mollitia tenetur, totam non harum itaque, molestiae nulla facilis?</div>
-              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas labore repellendus nihil cupiditate. Possimus et itaque consequatur? Numquam fugiat quo deserunt mollitia tenetur, totam non harum itaque, molestiae nulla facilis?</div>
-              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas labore repellendus nihil cupiditate. Possimus et itaque consequatur? Numquam fugiat quo deserunt mollitia tenetur, totam non harum itaque, molestiae nulla facilis?</div>
+            <div ref={scrollElRef} className='lesson-summary' onScroll={(event) => handleScroll(event)}>
+              <LessonSummaryBlock header='Кіріспе:' text={lesson.summary} />
             </div>
-            <BeginTestButton onClick={() => handleClick()} />
-          </>
+            <div className='lesson-summary__button-wrapper'>
+              <BeginTestButton isDisabled={!bottomReached} onClick={() => handleClick()} />
+            </div>
+          </div>
         )
       }
     </>

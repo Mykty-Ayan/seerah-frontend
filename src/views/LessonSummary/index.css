@@ -1,11 +1,20 @@
+.lesson-summary__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px);
+}
+
 .lesson-summary {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
   box-sizing: border-box;
-  padding: 16px;
-  height: 400px;
+  padding: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  flex-grow: 1;
   overflow-y: scroll;
+  white-space: pre-wrap;
 }
 
 .lesson-summary__image {
@@ -22,4 +31,14 @@
   padding-bottom: 16px;
   width: 100%;
   transition: all 1s ease-out;
+}
+
+.lesson-summary__button-wrapper {
+  box-sizing: border-box;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: white;
+  border-top: 1px solid #DDDDDD;
 }

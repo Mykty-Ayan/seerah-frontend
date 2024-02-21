@@ -7,9 +7,12 @@ type ProgressBarType = {
 const ProgressBar = ({ value}: ProgressBarType) => {
   return (
     <>
-      <div className='progress-bar'>
-        <div className='progress-bar__bar' style={{width: value+'%'}}></div>
+      <div className='progress-bar__wrapper'>
+        <div className='progress-bar'>
+          <div className='progress-bar__bar' style={{width: value+'%'}}></div>
+        </div>
       </div>
+      
     </>
   )
 }

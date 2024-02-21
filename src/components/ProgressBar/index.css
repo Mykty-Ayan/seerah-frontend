@@ -1,15 +1,22 @@
+.progress-bar__wrapper {
+  background-color: rgba(30, 30, 30, 0.05);
+  box-sizing: border-box;
+  padding: 24px;
+  padding-bottom: 0px;
+}
+
 .progress-bar {
   width: 100%;
-  background-color: #F4F4F4;
-  border-radius: 4px;
-  height: 8px;
+  background-color: white;
+  border-radius: 2px;
+  height: 6px;
 }
 
 .progress-bar__bar {
   width: 0%;
-  background-color: #01AB01;
-  border-radius: 4px;
-  height: 8px;
+  background-color: #019156;
+  border-radius: 2px;
+  height: 6px;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;

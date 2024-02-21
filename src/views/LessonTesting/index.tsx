@@ -10,6 +10,7 @@ import ProgressBar from '../../components/ProgressBar';
 import TestResult from '../../components/TestResult';
 import HeaderWithBackButton from '../../components/HeaderWithBackButton';
 import HeaderWithoutBackButton from '../../components/HeaderWithoutBackButton';
+import NextQuestionButton from '../../components/NextQuestionButton';
 
 const LessonTesting = () => {
   const chapters = useAppSelector((state) => state.lessons.lessons);
@@ -17,6 +18,7 @@ const LessonTesting = () => {
   const [currQuestion, setCurrQuestion] = React.useState<IQuestion | null>(null);
   const [questionCounter, setQuestionCounter] = useState(0);
   const [isAcceptButtonVisible, showAcceptButton] = useState(false);
+  const [isCheckStage, toggleCheckStage] = useState(false);
   const [rightAnswersCounter, setRightAnswersCounter] = useState(0);
   let { chapterId, lessonId } = useParams();
   useEffect(() => {
@@ -66,15 +68,23 @@ const LessonTesting = () => {
                 questionCounter={questionCounter}
                 showAcceptButton={showAcceptButton}
                 answers={currQuestion.answerOptions}
+                isCheckStage={isCheckStage}
+                question={currQuestion}
               />
             </>
           )
         }
       </div>
       {
-        isAcceptButtonVisible &&
-        <div onClick={() => setQuestionCounter((questionCounter) => questionCounter + 1)}>
-          <AcceptButton />
+        lesson && (questionCounter < lesson.questions.length) &&
+        <div onClick={() => { toggleCheckStage(true) }}>
+          <AcceptButton isActive={isAcceptButtonVisible && !isCheckStage} />
+        </div>
+      }
+      {
+        isCheckStage &&
+        <div onClick={() => { setQuestionCounter((questionCounter) => questionCounter + 1); toggleCheckStage(false) }}>
+          <NextQuestionButton />
         </div>
       }
       {

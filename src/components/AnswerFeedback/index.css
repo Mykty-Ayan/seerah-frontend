@@ -12,6 +12,10 @@
   font-size: 14px;
   line-height: 22px;
   color: #1E1E1E;
+  position: fixed;
+  bottom: 70px;
+  left: 24px;
+  right: 24px;
 }
 
 .answer-feedback--wrong {
@@ -28,4 +32,8 @@
   font-size: 14px;
   line-height: 22px;
   color: #1E1E1E;
+  position: fixed;
+  bottom: 70px;
+  left: 24px;
+  right: 24px
 }

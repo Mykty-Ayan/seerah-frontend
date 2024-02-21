@@ -1,21 +1,21 @@
+.finish-test-button:active {
+  opacity: 0.5;
+}
+
 .finish-test-button {
-  height: 38px;
-  background-color: #01AB01;
+  height: 46px;
+  background-color: #019156;
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
   color: white;
-  border-radius: 8px;
+  border-radius: 100px;
   border: none;
   position: fixed;
-  width: calc(100% - 32px);
+  width: calc(100% - 48px);
+  left: 24px;
   bottom: 16px;
-  left: 16px;
-}
-
-.finish-test-button:active {
-  opacity: 0.5;
 }

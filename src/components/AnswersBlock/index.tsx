@@ -32,6 +32,7 @@ const AnswersBlock = ({ question, answers, showAcceptButton, questionCounter, se
     if (questionCounter !== 0) {
       setSelectedAnswerInd(null);
       showAcceptButton(false);
+      setMultiAnsSelects([]);
     }
   }, [questionCounter]);
   useEffect(() => {

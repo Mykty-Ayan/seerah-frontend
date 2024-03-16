@@ -2,6 +2,7 @@
   background-color: #DCF5EB;
   border-radius: 10px;
   box-sizing: border-box;
+  height: 54px;
   padding: 16px;
   display: flex;
   flex-direction: row;
@@ -22,6 +23,7 @@
   background-color: #FCE8EC;
   border-radius: 10px;
   box-sizing: border-box;
+  height: 54px;
   padding: 16px;
   display: flex;
   flex-direction: row;

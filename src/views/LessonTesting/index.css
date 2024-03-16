@@ -3,6 +3,32 @@
   flex-direction: column;
   row-gap: 0px;
   box-sizing: border-box;
-  padding-top: 16px;
-  padding-bottom: 80px;
+  background-color: #FAF9F7;
+  height: calc(100vh - 40px);
+}
+
+.lesson-testing__button-wrapper {
+  background-color: white;
+  min-height: 78px;
+  box-sizing: border-box;
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  -webkit-box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
+}
+
+.lesson-testing__button-wrapper--check-stage {
+  background-color: white;
+  min-height: 140px;
+  box-sizing: border-box;
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  -webkit-box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
 }

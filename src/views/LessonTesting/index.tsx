@@ -49,42 +49,46 @@ const LessonTesting = () => {
         :
         <HeaderWithoutBackButton header='Сынақтама бағасы' />
       }
-      
-      <div className='lesson-testing'>
-        {
-          lesson && (questionCounter < lesson.questions.length) &&
-          <ProgressBar value={((questionCounter) / lesson.questions.length) * 100} />
-        }
-        {
-          currQuestion && (
-            <>
-              <QuestionBlock
-                header={`${currQuestion.id} сұрақ`}
-                description={currQuestion.questionText}
-              />
-              <AnswersBlock
-                rightAnswersCounter={rightAnswersCounter}
-                setRightAnswersCounter={setRightAnswersCounter}
-                questionCounter={questionCounter}
-                showAcceptButton={showAcceptButton}
-                answers={currQuestion.answerOptions}
-                isCheckStage={isCheckStage}
-                question={currQuestion}
-              />
-            </>
-          )
-        }
-      </div>
       {
-        lesson && (questionCounter < lesson.questions.length) &&
-        <div onClick={() => { toggleCheckStage(true) }}>
-          <AcceptButton isActive={isAcceptButtonVisible && !isCheckStage} />
-        </div>
-      }
-      {
-        isCheckStage &&
-        <div onClick={() => { setQuestionCounter((questionCounter) => questionCounter + 1); toggleCheckStage(false) }}>
-          <NextQuestionButton />
+        lesson && questionCounter < lesson.questions.length &&
+        <div className='lesson-testing'>
+          {
+            lesson && (questionCounter < lesson.questions.length) &&
+            <ProgressBar value={((questionCounter) / lesson.questions.length) * 100} />
+          }
+          {
+            currQuestion && (
+              <>
+                <QuestionBlock
+                  header={`${currQuestion.id} сұрақ`}
+                  description={currQuestion.questionText}
+                />
+                <AnswersBlock
+                  rightAnswersCounter={rightAnswersCounter}
+                  setRightAnswersCounter={setRightAnswersCounter}
+                  questionCounter={questionCounter}
+                  showAcceptButton={showAcceptButton}
+                  answers={currQuestion.answerOptions}
+                  isCheckStage={isCheckStage}
+                  question={currQuestion}
+                />
+              </>
+            )
+          }
+          <div className={isCheckStage ? 'lesson-testing__button-wrapper--check-stage' : 'lesson-testing__button-wrapper'}>
+            {
+              lesson && (questionCounter < lesson.questions.length) && !isCheckStage &&
+              <div onClick={() => { toggleCheckStage(true) }}>
+                <AcceptButton isActive={isAcceptButtonVisible && !isCheckStage} />
+              </div>
+            }
+            {
+              isCheckStage &&
+              <div onClick={() => { setQuestionCounter((questionCounter) => questionCounter + 1); toggleCheckStage(false) }}>
+                <NextQuestionButton />
+              </div>
+            }
+          </div>
         </div>
       }
       {

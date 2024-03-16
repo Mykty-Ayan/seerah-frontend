@@ -70,7 +70,6 @@
 
 .lesson-begin-popup__button {
   margin: 0;
-  margin-top: 14px;
   padding: 0;
   box-sizing: border-box;
   border: none;
@@ -88,7 +87,6 @@
 
 .lesson-begin-popup__button--repeat {
   margin: 0;
-  margin-top: 14px;
   padding: 0;
   box-sizing: border-box;
   border: 1px solid rgba(30, 30, 30, 0.05);
@@ -110,7 +108,6 @@
 
 .lesson-begin-popup__button--disabled {
   margin: 0;
-  margin-top: 14px;
   padding: 0;
   box-sizing: border-box;
   border: 1px solid #E7E7EB;
@@ -127,12 +124,16 @@
 }
 
 .lesson-begin-popup__previous-lesson-not-learned {
-  margin: 0;
-  padding: 0;
+  margin-top: 12px;
+  box-sizing: border-box;
+  padding: 8px 12px 8px 12px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  color: #C72041;
+  color: rgba(30, 30, 30, 0.75);
   text-align: center;
+  border: 1px solid rgba(30, 30, 30, 0.05);
+  border-radius: 10px;
+  background-color: #FCF5E8;
 }

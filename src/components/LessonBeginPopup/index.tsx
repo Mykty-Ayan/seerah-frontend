@@ -36,6 +36,12 @@ const LessonBeginPopup = ({ chapter, lesson, coordinates, isVisible }: LessonBeg
         <h3 className='lesson-begin-popup__lesson-name'>{lesson?.name}</h3>
         <p className='lesson-begin-popup__lesson-description'>{lesson?.description}</p>
         {
+          !isPrevLessonLearned() &&
+          <div className='lesson-begin-popup__previous-lesson-not-learned'>
+            Жалғастару үшін алдыңғы сабақты өту қажет
+          </div>
+        }
+        {
           isPrevLessonLearned()
           ?
           <button
@@ -53,12 +59,6 @@ const LessonBeginPopup = ({ chapter, lesson, coordinates, isVisible }: LessonBeg
           >
             Бастау
           </button>
-        }
-        {
-          !isPrevLessonLearned() &&
-          <p className='lesson-begin-popup__previous-lesson-not-learned'>
-            Бұл сабақты ашу үшін, алдыңғы сабақты өтуіңіз қажет
-          </p>
         }
       </div>
     </>

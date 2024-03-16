@@ -10,10 +10,7 @@
   color: white;
   border-radius: 100px;
   border: none;
-  position: fixed;
-  width: calc(100% - 48px);
-  left: 24px;
-  bottom: 16px;
+  width: 100%;
 }
 
 .accept-button:active {
@@ -32,8 +29,5 @@
   color: #C7C7CC;
   border-radius: 100px;
   border: 1px solid rgba(30, 30, 30, 0.05);
-  position: fixed;
-  width: calc(100% - 48px);
-  left: 24px;
-  bottom: 16px;
+  width: 100%;
 }

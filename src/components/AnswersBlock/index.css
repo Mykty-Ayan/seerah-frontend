@@ -5,4 +5,8 @@
   box-sizing: border-box;
   padding-left: 24px;
   padding-right: 24px;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-top: 48px;
+  padding-bottom: 20px;
 }

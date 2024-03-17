@@ -4,6 +4,7 @@ import {
 import Main from '../views/Main';
 import LessonSummary from '../views/LessonSummary';
 import LessonTesting from '../views/LessonTesting';
+import Landing from '../views/Landing';
 
 export const router = createBrowserRouter([
   {
@@ -17,5 +18,9 @@ export const router = createBrowserRouter([
   {
     path: "chapters/:chapterId/tests/:lessonId",
     element: <LessonTesting />,
+  },
+  {
+    path: "landing",
+    element: <Landing />,
   },
 ]);

@@ -9,18 +9,18 @@ import Landing from '../views/Landing';
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <Landing />,
   },
   {
-    path: "chapters/:chapterId/lessons/:lessonId",
+    path: "webview/chapters/:chapterId/lessons/:lessonId",
     element: <LessonSummary />,
   },
   {
-    path: "chapters/:chapterId/tests/:lessonId",
+    path: "webview/chapters/:chapterId/tests/:lessonId",
     element: <LessonTesting />,
   },
   {
-    path: "landing",
-    element: <Landing />,
+    path: "webview",
+    element: <Main />,
   },
 ]);

@@ -45,7 +45,7 @@ const LessonBeginPopup = ({ chapter, lesson, coordinates, isVisible }: LessonBeg
           isPrevLessonLearned()
           ?
           <button
-            onClick={() => navigate(`chapters/${chapter?.id}/lessons/${lesson?.id}`)}
+            onClick={() => navigate(`/webview/chapters/${chapter?.id}/lessons/${lesson?.id}`)}
             type='button'
             className={lesson?.isFinished ? 'lesson-begin-popup__button--repeat' : 'lesson-begin-popup__button'}
           >

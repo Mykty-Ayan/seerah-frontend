@@ -35,7 +35,7 @@ const LessonSummary = () => {
     }
   }, [lesson]);
   function handleClick() {
-    navigate(`/chapters/${chapterId}/tests/${lessonId}`);
+    navigate(`/webview/chapters/${chapterId}/tests/${lessonId}`);
   }
   function handleScroll(e: React.UIEvent<HTMLDivElement, UIEvent>) {
     const scrolledALittle = (e.target as HTMLDivElement).scrollTop > 20;

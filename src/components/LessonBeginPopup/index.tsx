@@ -31,24 +31,35 @@ const LessonBeginPopup = ({ chapter, lesson, coordinates, isVisible }: LessonBeg
   };
   return (
     <>
-      <div className={isVisible ? 'lesson-begin-popup' : 'lesson-begin-popup--hidden'} style={{left: coordinates.x, top: coordinates.y}}>
-        <div className='lesson-begin-popup__triangle'></div>
+      <div className={isVisible ? 'lesson-begin-popup' : 'lesson-begin-popup--hidden'} style={{top: coordinates.y}}>
+        <div className='lesson-begin-popup__triangle' style={{left: coordinates.x}}></div>
         <h3 className='lesson-begin-popup__lesson-name'>{lesson?.name}</h3>
         <p className='lesson-begin-popup__lesson-description'>{lesson?.description}</p>
         {
           !isPrevLessonLearned() &&
-          <p className='lesson-begin-popup__previous-lesson-not-learned'>
-            Бұл сабақты ашу үшін, алдыңғы сабақты өтуіңіз қажет
-          </p>
+          <div className='lesson-begin-popup__previous-lesson-not-learned'>
+            Жалғастару үшін алдыңғы сабақты өту қажет
+          </div>
         }
-        <button
-          onClick={() => navigate(`chapters/${chapter?.id}/lessons/${lesson?.id}`)}
-          type='button'
-          className={isPrevLessonLearned() ? 'lesson-begin-popup__button' : 'lesson-begin-popup__button--disabled'}
-          disabled={!isPrevLessonLearned()}
-        >
-          {lesson?.isFinished ? 'Қайталау' : 'Бастау'}
-        </button>
+        {
+          isPrevLessonLearned()
+          ?
+          <button
+            onClick={() => navigate(`/webview/chapters/${chapter?.id}/lessons/${lesson?.id}`)}
+            type='button'
+            className={lesson?.isFinished ? 'lesson-begin-popup__button--repeat' : 'lesson-begin-popup__button'}
+          >
+            {lesson?.isFinished ? 'Қайта көру' : 'Бастау'}
+          </button>
+          :
+          <button
+            type='button'
+            className='lesson-begin-popup__button--disabled'
+            disabled={true}
+          >
+            Бастау
+          </button>
+        }
       </div>
     </>
   )

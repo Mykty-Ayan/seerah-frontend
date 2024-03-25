@@ -1,17 +1,17 @@
 .lesson-summary-block {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 16px;
 }
 
 .lesson-summary-block__header {
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
-  color: #01AB01;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: #1E1E1E;
 }
 
 .lesson-summary-block__text {
@@ -20,6 +20,6 @@
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
-  color: #000000;
+  line-height: 22px;
+  color: #1E1E1E;
 }

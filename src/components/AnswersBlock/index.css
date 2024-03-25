@@ -1,5 +1,12 @@
 .answers-block {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 12px;
+  box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 24px;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-top: 48px;
+  padding-bottom: 20px;
 }

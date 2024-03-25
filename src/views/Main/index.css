@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-  padding-top: 16px;
+  box-sizing: border-box;
+  padding: 24px;
   padding-bottom: 60px;
+  background-color: #FFFFFF;
 }
 
 .main-page__lessons {
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 24px;
 }

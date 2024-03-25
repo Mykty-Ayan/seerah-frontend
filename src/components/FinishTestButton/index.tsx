@@ -12,7 +12,7 @@ const FinishTestButton = ({ onClick }: FinishTestButtonType) => {
         type='button'
         className='finish-test-button'
       >
-        Аяқтау
+        Әрі қарай
       </button>
     </>
   )

@@ -19,7 +19,7 @@ const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId }: Tes
   const dispatch = useAppDispatch();
   function clickHandler() {
     dispatch(markLessonAsFinished({lessonId, chapterId}))
-    navigate('/');
+    navigate('/webview');
   }
   useEffect(() => {
     setTimeout(() => {

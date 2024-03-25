@@ -104,7 +104,7 @@ const AnswersBlock = ({ question, answers, showAcceptButton, questionCounter, se
           })
         }
         {
-          !!selectedAnswerInd && isCheckStage &&
+          selectedAnswerInd !== null && isCheckStage &&
           <AnswerFeedback isRight={answers[selectedAnswerInd].isRight} rightAnswer={getRightAnswer()} />
         }
       </div>

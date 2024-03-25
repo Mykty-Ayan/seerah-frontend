@@ -40,7 +40,7 @@ function Landing() {
           <div className='landing-1__left'>
             <div className='landing-1__left-logo-and-title'>
               <img src={appIcon} alt="landing icon" />
-              <h2 className='landing-1__left-title'>Sira.kz</h2>
+              <h2 className='landing-1__left-title'>Seerah.kz</h2>
             </div>
             <p className='landing-1__left-description'>Сүйкті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
             <div className='landing-1__left-store-logos'>
@@ -99,7 +99,7 @@ function Landing() {
             <div className='landing__bottom-left'>
               <div className='landing__bottom-logo-and-header'>
                 <img src={appIcon} alt="landing icon" />
-                <h2 className='landing__bottom-header'>Sira.kz</h2>
+                <h2 className='landing__bottom-header'>Seerah.kz</h2>
               </div>
               <p className='landing__bottom-description'>Сүйкті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
             </div>

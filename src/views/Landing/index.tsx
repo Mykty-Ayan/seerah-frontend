@@ -42,7 +42,7 @@ function Landing() {
               <img src={appIcon} alt="landing icon" />
               <h2 className='landing-1__left-title'>Seerah.kz</h2>
             </div>
-            <p className='landing-1__left-description'>Сүйікті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
+            <p className='landing-1__left-description'>Сүйікті  Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
             <div className='landing-1__left-store-logos'>
               <img src={appstorePC} alt="app store logo" />
               <img src={googleplayPC} alt="google play logo" />
@@ -63,7 +63,7 @@ function Landing() {
           <div className='landing-2'>
             <img className='landing-2__image' src="/landing-2.png" alt="app feature" />
             <div>
-              Сүйкті Пайғамбарымыздың (ﷺ) <span className='landing-2__green-color-text'>сирасын үйренудің жаңа жолы</span>
+              Сүйікті Пайғамбарымыздың (ﷺ) <span className='landing-2__green-color-text'>сирасын үйренудің жаңа жолы</span>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ function Landing() {
                 <img src={appIcon} alt="landing icon" />
                 <h2 className='landing__bottom-header'>Seerah.kz</h2>
               </div>
-              <p className='landing__bottom-description'>Сүйкті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
+              <p className='landing__bottom-description'>Сүйікті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
             </div>
             <div className='landing__bottom-right'>
               <img src={appstorePC} alt="app store logo" />

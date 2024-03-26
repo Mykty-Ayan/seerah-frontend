@@ -42,7 +42,7 @@ function Landing() {
               <img src={appIcon} alt="landing icon" />
               <h2 className='landing-1__left-title'>Seerah.kz</h2>
             </div>
-            <p className='landing-1__left-description'>Сүйкті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
+            <p className='landing-1__left-description'>Сүйікті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
             <div className='landing-1__left-store-logos'>
               <img src={appstorePC} alt="app store logo" />
               <img src={googleplayPC} alt="google play logo" />

@@ -1,3 +1,10 @@
+```shell
+docker build -t seerah-front:version .
+
+docker run -d -p 127.0.0.1:8081:80 seerah-front:version
+```
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

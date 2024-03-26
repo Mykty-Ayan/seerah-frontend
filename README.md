@@ -1,7 +1,10 @@
 ```shell
 docker build -t seerah-front:version .
+```
 
-docker run -d -p 127.0.0.1:8081:80 seerah-front:version
+
+```shell
+docker run --restart always -d -p 127.0.0.1:8081:80 seerah-front:version
 ```
 
 

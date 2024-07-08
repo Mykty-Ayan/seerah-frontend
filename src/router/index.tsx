@@ -5,6 +5,8 @@ import Main from '../views/Main';
 import LessonSummary from '../views/LessonSummary';
 import LessonTesting from '../views/LessonTesting';
 import Landing from '../views/Landing';
+import TermsOfUse from "../views/TermsOfUse";
+import PrivacyPolicy from "../views/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -23,4 +25,12 @@ export const router = createBrowserRouter([
     path: "webview",
     element: <Main />,
   },
+  {
+    path: "terms-of-use",
+    element: <TermsOfUse />
+  },
+  {
+    path: "privacy-policy",
+    element: <PrivacyPolicy />
+  }
 ]);

@@ -8,23 +8,35 @@ import video from '/video.jpg';
 import HeaderWithBackButton from '../../components/HeaderWithBackButton';
 import BeginTestButton from '../../components/BeginTestButton';
 
+import {  getChapterLessons } from '../../services/chapterService';
+
 const LessonSummary = () => {
-  const chapters = useAppSelector((state) => state.lessons.lessons);
   const [lesson, setLesson] = React.useState<ILesson | null>(null);
   const [bottomReached, setBottomReached] = useState(false);
   let { chapterId, lessonId } = useParams();
   const scrollElRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  
   useEffect(() => {
-    if (chapterId && lessonId) {
-      const chapter = chapters.find((storeChapter) => storeChapter.id == Number(chapterId));
-      if (chapter) {
-        const lesson = chapter.lessons.find((storeLesson) => storeLesson.id == Number(lessonId));
-        if (lesson) {
-          setLesson(lesson);
+    const fetchLessonsAndChapters = async () => {
+      try {
+        const chapterLesson = await getChapterLessons();
+
+        if (chapterId && lessonId) {
+          const chapter = chapterLesson.lessons.find((storeChapter) => storeChapter.id == Number(chapterId));
+          if (chapter) {
+            const lesson = chapter.lessons.find((storeLesson) => storeLesson.id == Number(lessonId));
+            if (lesson) {
+              setLesson(lesson);
+            }
+          }
         }
+      } catch (error) {
+        console.error('Failed to fetch lessons:', error);
       }
-    }
+    };
+
+    fetchLessonsAndChapters();
   }, []);
   useEffect(() => {
     if (scrollElRef.current) {

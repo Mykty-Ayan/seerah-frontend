@@ -5,6 +5,10 @@ export interface IChapter {
   lessons: ILesson[];
 }
 
+export interface IChapterLesson {
+  lessons: IChapter[];
+}
+
 export interface ILesson {
   id: number;
   isFinished: boolean;

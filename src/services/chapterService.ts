@@ -1,5 +1,5 @@
 import request from './apiClient';
-import { IChapter } from '../interfaces';
+import { IChapter , IChapterLesson} from '../interfaces';
 
 export const getChapters = async (): Promise<IChapter[]> => {
     const response = await request({ url: '/api/v2/chapter/all', method: 'GET', requiresAuth: true });
@@ -11,8 +11,8 @@ export const getChapter = async (chapterId: string): Promise<IChapter[]> => {
     return response.data;
 };
 
-export const getChapterLesson = async (): Promise<IChapter[]> => {
-    const response = await request({ url: '/api/v2/chapter/lessons', method: 'GET', requiresAuth: false });
+export const getChapterLessons = async (): Promise<IChapterLesson> => {
+    const response = await request({ url: '/api/v2/chapter/lessons', method: 'GET', requiresAuth: true });
     return response.data;
 };
 

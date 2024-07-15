@@ -12,8 +12,11 @@ import HeaderWithBackButton from '../../components/HeaderWithBackButton';
 import HeaderWithoutBackButton from '../../components/HeaderWithoutBackButton';
 import NextQuestionButton from '../../components/NextQuestionButton';
 
+
+import { getChapterLessons } from '../../services/chapterService';
+import { finishLesson } from '../../services/lessonService'
+
 const LessonTesting = () => {
-  const chapters = useAppSelector((state) => state.lessons.lessons);
   const [lesson, setLesson] = React.useState<ILesson | null>(null);
   const [currQuestion, setCurrQuestion] = React.useState<IQuestion | null>(null);
   const [questionCounter, setQuestionCounter] = useState(0);
@@ -21,33 +24,60 @@ const LessonTesting = () => {
   const [isCheckStage, toggleCheckStage] = useState(false);
   const [rightAnswersCounter, setRightAnswersCounter] = useState(0);
   let { chapterId, lessonId } = useParams();
+
   useEffect(() => {
-    if (chapterId && lessonId) {
-      const chapter = chapters.find((storeChapter) => storeChapter.id === Number(chapterId));
-      if (chapter) {
-        const localLesson = chapter.lessons.find((lesson) => lesson.id == Number(lessonId));
-        if (localLesson) {
-          setLesson(localLesson);
-          setCurrQuestion(localLesson.questions[questionCounter]);
+    const fetchLessonsAndChapters = async () => {
+      try {
+        const chapterLesson = await getChapterLessons();
+        if (chapterId && lessonId) {
+          const chapter = chapterLesson.lessons.find((storeChapter) => storeChapter.id === Number(chapterId));
+          if (chapter) {
+            const localLesson = chapter.lessons.find((lesson) => lesson.id == Number(lessonId));
+            if (localLesson) {
+              setLesson(localLesson);
+              setCurrQuestion(localLesson.questions[questionCounter]);
+            }
+          }
         }
+
+      } catch (error) {
+        console.error('Failed to fetch lessons:', error);
       }
-    }
-  }, []);
+    };
+
+    fetchLessonsAndChapters();
+  }, [chapterId, lessonId, questionCounter, currQuestion]);
+
   useEffect(() => {
-    if (questionCounter) {
-      if (lesson) {
-        setCurrQuestion(lesson.questions[questionCounter]);
-      }
+    if (questionCounter && lesson) {
+      setCurrQuestion(lesson.questions[questionCounter]);
     }
-  }, [questionCounter]);
+  }, [questionCounter, lesson]);
+
+  useEffect(() => {
+    if (lesson && questionCounter >= lesson.questions.length) {
+      const lessonFinishRequest = {
+        correctAnswersCount: rightAnswersCounter,
+        totalAnswersCount: lesson.questions.length,
+      };
+      finishLesson(lesson.id, lessonFinishRequest)
+        .then((response) => {
+          console.log('Lesson finished:', response);
+        })
+        .catch((error) => {
+          console.error('Error finishing lesson:', error);
+        });
+    }
+  }, [lesson, questionCounter, rightAnswersCounter]);
+
   return (
     <>
       {
         lesson && (questionCounter < lesson.questions.length)
-        ?
-        <HeaderWithBackButton header='Сынақтама' />
-        :
-        <HeaderWithoutBackButton header='Сынақтама бағасы' />
+          ?
+          <HeaderWithBackButton header='Сынақтама' />
+          :
+          <HeaderWithoutBackButton header='Сынақтама бағасы' />
       }
       {
         lesson && questionCounter < lesson.questions.length &&

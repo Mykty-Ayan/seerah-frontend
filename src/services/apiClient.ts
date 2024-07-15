@@ -1,20 +1,20 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import { getToken } from '../context/AuthContext'; 
+import axios, { AxiosRequestConfig } from "axios";
+import { getToken } from "../context/AuthContext";
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8080', 
-  timeout: 10000, 
+  baseURL: "http://localhost:8080",
+  timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
 apiClient.interceptors.request.use(
   async (config) => {
     if ((config as any).requiresAuth) {
-      const token = getToken(); 
+      const token = getToken();
       if (token) {
-        config.headers['Authorization'] = `Bearer ${token}`;
+        config.headers["Authorization"] = `Bearer ${token}`;
       }
     }
     return config;
@@ -23,7 +23,6 @@ apiClient.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
 
 const request = (config: AxiosRequestConfig & { requiresAuth?: boolean }) => {
   return apiClient(config);

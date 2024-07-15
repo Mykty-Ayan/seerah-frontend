@@ -1,8 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { getToken } from "../context/AuthContext";
+import config from "../config";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: config.apiBaseUrl,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

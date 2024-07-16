@@ -4,6 +4,7 @@ import { SignInRequest, JwtAuthenticationResponse, SignUpRequest, SignUpResponse
 
 interface AuthContextType {
   token: string | null;
+  setToken: (token: string | null) => void;
 }
 
 interface AuthProviderProps {
@@ -17,7 +18,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const autoAuth = async () => {
-      const signInRequest: SignInRequest = { user_id: '4e6253ae-6ed2-4345-bac7-7f8507e3ccfa', fcm_token: 'some_token' };
+      const signInRequest: SignInRequest = { user_id: '33ab1a75-d781-46c4-b20f-592515653599', fcm_token: 'some_token' };
       try {
         const response: JwtAuthenticationResponse = await signIn(signInRequest);
         setToken(response.access);
@@ -40,7 +41,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, [token]);
 
   return (
-    <AuthContext.Provider value={{ token }}>
+    <AuthContext.Provider value={{ token, setToken }}>
       {children}
     </AuthContext.Provider>
   );

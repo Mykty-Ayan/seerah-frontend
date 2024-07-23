@@ -1,6 +1,6 @@
 
 const config = {
-  apiBaseUrl: "http://localhost:8080",
+  apiBaseUrl: "https://seerah-backend.seerah.kz",
 };
 
 export default config;

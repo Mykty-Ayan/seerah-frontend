@@ -12,7 +12,6 @@ import HeaderWithBackButton from '../../components/HeaderWithBackButton';
 import HeaderWithoutBackButton from '../../components/HeaderWithoutBackButton';
 import NextQuestionButton from '../../components/NextQuestionButton';
 
-
 import { fetchChapterLessons } from '../../store/chapterLessonsSlice';
 import { finishLesson } from '../../services/lessonService';
 
@@ -25,6 +24,7 @@ const LessonTesting = () => {
   const [isAcceptButtonVisible, showAcceptButton] = useState(false);
   const [isCheckStage, toggleCheckStage] = useState(false);
   const [rightAnswersCounter, setRightAnswersCounter] = useState(0);
+  const [isLessonFinished, setIsLessonFinished] = useState(false);
   let { chapterId, lessonId } = useParams();
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const LessonTesting = () => {
   }, [questionCounter, lesson]);
 
   useEffect(() => {
-    if (lesson && questionCounter >= lesson.questions.length) {
+    if (lesson && questionCounter >= lesson.questions.length && !isLessonFinished) {
       const lessonFinishRequest = {
         correctAnswersCount: rightAnswersCounter,
         totalAnswersCount: lesson.questions.length,
@@ -60,13 +60,14 @@ const LessonTesting = () => {
         .then((response) => {
           console.log('Lesson finished:', response);
           // After finishing the lesson, update the state and refetch the chapter lessons
+          setIsLessonFinished(true);
           dispatch(fetchChapterLessons());
         })
         .catch((error) => {
           console.error('Error finishing lesson:', error);
         });
     }
-  }, [lesson, questionCounter, rightAnswersCounter, dispatch]);
+  }, [lesson, questionCounter, rightAnswersCounter, dispatch, isLessonFinished]);
 
   return (
     <>

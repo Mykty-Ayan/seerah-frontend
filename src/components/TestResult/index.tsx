@@ -18,7 +18,7 @@ const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId }: Tes
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   function clickHandler() {
-    dispatch(markLessonAsFinished({lessonId, chapterId}))
+    dispatch(markLessonAsFinished({ lessonId, chapterId }));
     navigate('/webview');
   }
   useEffect(() => {
@@ -34,7 +34,7 @@ const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId }: Tes
           <div className='circular-progress-bar'>
             <div className='circular-progress-bar__bar'>
               <div className='circular-progress-bar__values'>
-                <h3 className='circular-progress-bar__percentage'>{ percentage }%</h3>
+                <h3 className='circular-progress-bar__percentage'>{percentage}%</h3>
                 <p className='circular-progress-bar__correct-answers'>{correctAnswers}/{overallAnswers}</p>
               </div>
             </div>

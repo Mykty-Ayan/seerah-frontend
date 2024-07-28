@@ -62,3 +62,7 @@ export interface SignUpResponse {
   user: UserResponse;
   token: JwtAuthenticationResponse;
 }
+
+export interface RefreshTokenRequest {
+  user_id: string;
+}

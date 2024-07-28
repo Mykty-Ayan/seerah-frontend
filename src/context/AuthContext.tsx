@@ -1,10 +1,13 @@
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
-import { signIn, signUp } from '../services/authService';
-import { SignInRequest, JwtAuthenticationResponse, SignUpRequest, SignUpResponse } from '../interfaces/index';
+import { signIn, signUp, refreshToken } from '../services/authService';
+import { SignInRequest, JwtAuthenticationResponse, SignUpRequest, SignUpResponse, RefreshTokenRequest } from '../interfaces/index';
 
 interface AuthContextType {
   token: string | null;
+  userId: string | null;
   setToken: (token: string | null) => void;
+  setUserId: (userId: string | null) => void;
+  refreshAuthToken: () => Promise<void>;
 }
 
 interface AuthProviderProps {
@@ -15,6 +18,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('token'));
+  const [userId, setUserId] = useState<string | null>(() => localStorage.getItem('user_id'));
 
   useEffect(() => {
     const autoAuth = async () => {
@@ -22,13 +26,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       try {
         const response: JwtAuthenticationResponse = await signIn(signInRequest);
         setToken(response.access);
+        setUserId(signInRequest.user_id);
         localStorage.setItem('token', response.access);
+        localStorage.setItem('user_id', signInRequest.user_id);
       } catch (error) {
         const signUpRequest: SignUpRequest = { username: 'defaultUsername', password: 'defaultPassword' };
         try {
           const response: SignUpResponse = await signUp(signUpRequest);
           setToken(response.token.access);
+          setUserId(response.user.id);
           localStorage.setItem('token', response.token.access);
+          localStorage.setItem('user_id', response.user.id);
         } catch (signUpError) {
           console.error('Failed to sign up:', signUpError);
         }
@@ -40,8 +48,21 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, [token]);
 
+  const refreshAuthToken = async () => {
+    if (userId) {
+      const refreshTokenRequest: RefreshTokenRequest = { user_id: userId };
+      try {
+        const newToken = await refreshToken(refreshTokenRequest);
+        setToken(newToken);
+        localStorage.setItem('token', newToken);
+      } catch (error) {
+        console.error('Failed to refresh token:', error);
+      }
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ token, setToken }}>
+    <AuthContext.Provider value={{ token, userId, setToken, setUserId, refreshAuthToken }}>
       {children}
     </AuthContext.Provider>
   );
@@ -57,4 +78,24 @@ export const useAuth = (): AuthContextType => {
 
 export const getToken = (): string | null => {
   return localStorage.getItem('token');
+};
+
+export const getUserId = (): string | null => {
+  return localStorage.getItem('user_id');
+};
+
+export const setToken = (token: string | null): void => {
+  if (token) {
+    localStorage.setItem('token', token);
+  } else {
+    localStorage.removeItem('token');
+  }
+};
+
+export const setUserId = (userId: string | null): void => {
+  if (userId) {
+    localStorage.setItem('user_id', userId);
+  } else {
+    localStorage.removeItem('user_id');
+  }
 };

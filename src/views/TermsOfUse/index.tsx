@@ -1,9 +1,12 @@
 import './index.css';
 import React from "react";
 
+import Header from "../../components/Header";
+
 const TermsOfUse: React.FC = () => {
     return (
         <>
+            <Header isScrolled={true}/>
             <div className={"terms-of-use"}>
                 <h1>TERMS OF USE</h1>
                 <p>

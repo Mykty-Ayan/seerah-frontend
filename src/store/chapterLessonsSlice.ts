@@ -1,5 +1,5 @@
 // src/store/slices/chapterLessonsSlice.ts
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 import { getChapterLessons } from "../services/chapterService";
 import { IChapterLesson } from "../interfaces";
 

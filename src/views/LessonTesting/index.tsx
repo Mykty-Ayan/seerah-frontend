@@ -2,7 +2,7 @@ import './index.css';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import { useParams } from 'react-router-dom';
 import { ILesson, IQuestion } from '../../interfaces';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import QuestionBlock from '../../components/QuestionBlock';
 import AnswersBlock from '../../components/AnswersBlock';
 import AcceptButton from '../../components/AcceptButton';
@@ -25,7 +25,7 @@ const LessonTesting = () => {
   const [isCheckStage, toggleCheckStage] = useState(false);
   const [rightAnswersCounter, setRightAnswersCounter] = useState(0);
   const [isLessonFinished, setIsLessonFinished] = useState(false);
-  let { chapterId, lessonId } = useParams();
+  const { chapterId, lessonId } = useParams();
 
   useEffect(() => {
     if (status === 'idle') {

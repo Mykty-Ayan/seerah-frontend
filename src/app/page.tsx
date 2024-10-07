@@ -1,95 +1,90 @@
+import appstorePC from "../../public/appstore-pc.svg";
+import googleplayPC from "../../public/googleplay-pc.svg";
+import appstore from "../../public/appstore.svg";
+import googleplay from "../../public/googleplay.svg";
+import appIcon from "../../public/app-icon.svg";
+
+import styles from './page.module.css';
 import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className={styles.landing}>
+      <div className={styles.landing1}>
+        <div className={styles.landing1__left}>
+          <div className={styles.landing1__leftLogoAndTitle}>
+            <Image src={appIcon} alt="landing icon"/>
+            <h2 className={styles.landing1__leftTitle}>Seerah.kz</h2>
+          </div>
+          <p className={styles.landing1__leftDescription}>Сүйікті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
+          <div className={styles.landing1__leftStoreLogos}>
+            <Image src={appstorePC} alt="app store logo"/>
+            <Image src={googleplayPC} alt="google play logo"/>
+          </div>
+          <div className={styles.landing1__leftStoreLogosMobile}>
+            <Image src={appstore} alt="app store logo"/>
+            <Image src={googleplay} alt="google play logo"/>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className={styles.landing1__right}>
+          <img className={styles.landing1__rightImage3} src="/landing-3.png" alt="app features 3 screens"/>
+          <img className={styles.landing1__rightImage2} src="/landing-4.png" alt="app features 3 screens"/>
+          <img className={styles.landing1__rightImage} src="/landing-2.png" alt="app features 3 screens"/>
+        </div>
+      </div>
+
+      <div className={styles.landing__featureBlocks}>
+        <div className={styles.landing2}>
+          <img className={styles.landing2__image} src="/landing-2.png" alt="app feature"/>
+          <div>
+            Сүйікті Пайғамбарымыздың (ﷺ) <span
+            className={styles.landing2__greenColorText}>сирасын үйренудің жаңа жолы</span>
+          </div>
+        </div>
+
+        <div className={styles.landing3}>
+          <img className={styles.landing3__image} src="/landing-3.png" alt="app feature"/>
+          <div>
+            Әр дәріс соңында <span className={styles.landing3__greenColorText}>өз өзіңізді тексеріп көріңіз</span>
+          </div>
+        </div>
+
+        <div className={styles.landing4}>
+          <img className={styles.landing4__image} src="/landing-4.png" alt="app feature"/>
+          <div>
+            Намаз кестесі көмегімен намаздарыңызды <span className={styles.landing4__greenColorText}>уақытылы оқыңыз</span>
+          </div>
+        </div>
+
+        <div className={styles.landing5}>
+          <img className={styles.landing5__image} src="/landing-5.png" alt="app feature"/>
+          <div>
+            Оңайлықпен <span className={styles.landing5__greenColorText}>құбыланы табыңыз</span>
+          </div>
+        </div>
+
+        <div className={styles.landing6}>
+          <img className={styles.landing6__image} src="/landing-6.png" alt="app feature"/>
+          <div>
+            <span className={styles.landing6__greenColorText}>Зікір жасап</span> басқа нәрсеге алаңдамаңыз
+          </div>
+        </div>
+
+        <div className={styles.landing__bottom}>
+          <div className={styles.landing__bottomLeft}>
+            <div className={styles.landing__bottomLogoAndHeader}>
+              <Image src={appIcon} alt="landing icon"/>
+              <h2 className={styles.landing__bottomHeader}>Seerah.kz</h2>
+            </div>
+            <p className={styles.landing__bottomDescription}>Сүйікті Пайғамбарымыздың (ﷺ) сирасын үйренудің жаңа жолы</p>
+          </div>
+          <div className={styles.landing__bottomRight}>
+            <Image src={appstorePC} alt="app store logo"/>
+            <Image src={googleplayPC} alt="google play logo"/>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }

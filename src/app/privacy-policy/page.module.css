@@ -1,0 +1,7 @@
+.privacyPolicy {
+    padding: 58px;
+    position: absolute;
+    z-index: 1;
+    background-image: url('/bg-img2.png');
+    background-size: 300px 200px;
+}

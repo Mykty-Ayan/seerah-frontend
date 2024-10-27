@@ -1,0 +1,139 @@
+.lesson-begin-popup {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  box-sizing: border-box;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease-out;
+}
+
+.lesson-begin-popup--hidden {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  box-sizing: border-box;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease-out;
+}
+
+.lesson-begin-popup__triangle {
+  position: absolute;
+  top: -12px;
+  left: 4px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 8px 13.9px 8px;
+  border-color: transparent transparent #FFFFFF transparent;
+  transform: rotate(0deg);
+}
+
+.lesson-begin-popup__lesson-name {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+}
+
+.lesson-begin-popup__lesson-description {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(30, 30, 30, 0.75);
+}
+
+.lesson-begin-popup__button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 100px;
+  width: 100%;
+  height: 46px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+  cursor: pointer;
+  background-color: #018850;
+}
+
+.lesson-begin-popup__button--repeat {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(30, 30, 30, 0.05);
+  border-radius: 100px;
+  width: 100%;
+  height: 46px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #018850;
+  cursor: pointer;
+  background-color: #DCF5EA;
+}
+
+.lesson-begin-popup__button:active {
+  opacity: 0.5;
+}
+
+.lesson-begin-popup__button--disabled {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid #E7E7EB;
+  border-radius: 100px;
+  width: 100%;
+  height: 46px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #C7C7CB;
+  cursor: pointer;
+  background-color: #F2F2F7;
+}
+
+.lesson-begin-popup__previous-lesson-not-learned {
+  margin-top: 12px;
+  box-sizing: border-box;
+  padding: 8px 12px 8px 12px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(30, 30, 30, 0.75);
+  text-align: center;
+  border: 1px solid rgba(30, 30, 30, 0.05);
+  border-radius: 10px;
+  background-color: #FCF5E8;
+}

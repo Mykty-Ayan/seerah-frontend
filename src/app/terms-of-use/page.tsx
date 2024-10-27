@@ -1,10 +1,13 @@
-import {JSX} from "react";
+"use server"
+import React, {JSX} from "react";
 
 import styles from "./page.module.css"
+import Navbar from "@/app/components/Navbar";
 
 export default async function TermsOfUse(): Promise<JSX.Element> {
   return (
     <>
+      <Navbar/>
       <div className={styles.termsOfUse}>
         <h1>TERMS OF USE</h1>
         <p>

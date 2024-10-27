@@ -1,8 +1,11 @@
 import styles from "./page.module.css"
+import Navbar from "@/app/components/Navbar";
+import React from "react";
 
 const PrivacyPolicy: React.FC = async () => {
   return (
     <>
+      <Navbar/>
       <div className={styles.privacyPolicy}>
         <h1>Privacy Policy</h1>
 

@@ -1,0 +1,65 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: white;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.15);
+    opacity: 1;
+    transition: all 0.5s ease-out;
+}
+
+.header--hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: white;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.15);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.header-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensures that the content is spaced evenly */
+    align-items: center; /* Vertically centers the content */
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px; /* Adds some padding on both sides */
+}
+
+.header img {
+    height: 40px; /* Adjust height if needed */
+}
+
+.header-store-icons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 25px; /* Adds space between the icons */
+    padding-right: 25px;
+}
+
+.header-store-icons img {
+    height: 40px; /* Adjust the size of the app store icons */
+}
+
+@media (max-width: 700px) {
+    .header-inner-wrapper {
+        padding: 0 10px;
+    }
+
+    .header-store-icons img {
+        height: 40px;
+    }
+    .header-store-icons {
+        column-gap: 5px;
+    }
+}

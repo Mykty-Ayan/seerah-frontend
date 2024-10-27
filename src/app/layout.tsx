@@ -58,7 +58,6 @@ export default function RootLayout({
             rel="stylesheet"/>
     </head>
     <body>
-    <Navbar/>
     {children}
     </body>
     </html>

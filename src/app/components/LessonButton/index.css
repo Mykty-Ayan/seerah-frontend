@@ -1,0 +1,108 @@
+.lesson-button {
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 6px 32px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 6px 32px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 32px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-button:active {
+  opacity: 0.5;
+}
+
+.lesson-button--finished {
+  position: relative;
+  background-color: #DCF5EB;
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lesson-button--finished:active {
+  opacity: 0.5;
+}
+
+.lesson-button--unavailable {
+  position: relative;
+  background-color: #F6F5F7;
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lesson-button--unavailable:active {
+  opacity: 0.5;
+}
+
+.lesson-button__inner-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #018850;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.lesson-button__inner-circle--finished {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.lesson-button__inner-circle--unavailable {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: rgba(30, 30, 30, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.lesson-button__checkmark {
+  pointer-events: none;
+}

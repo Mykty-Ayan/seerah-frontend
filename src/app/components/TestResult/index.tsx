@@ -1,7 +1,6 @@
 import './index.css';
-import CircularProgressSvg from '../../assets/circular_progress';
+import CircularProgressSvg from '@/../public/circular_progress';
 import FinishTestButton from '../FinishTestButton';
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { markLessonAsFinished } from '../../store/lessonsSlice';
@@ -15,11 +14,11 @@ type TestResultType = {
 
 const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId }: TestResultType) => {
   const [dashOffset, setDashOffset] = useState(450);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useAppDispatch();
   function clickHandler() {
     dispatch(markLessonAsFinished({ lessonId, chapterId }));
-    navigate('/webview');
+    console.log("navigate('/webview')");
   }
   useEffect(() => {
     setTimeout(() => {

@@ -1,5 +1,8 @@
 import './index.css';
-import checkmark from '../../assets/checkmark_checkbox.svg';
+
+import checkmark from '../../../../public/checkmark_checkbox.svg';
+
+import Image from "next/image";
 
 type MultiAnswerOptionProps = {
   isSelected: boolean;
@@ -21,7 +24,7 @@ const MultiAnswerOption = ({ isSelected, text, isRight, isCheckStage }: MultiAns
     return (
       <button className='multi-answer-option--selected'>
         <div className='multi-answer-option__circle--selected'>
-          <img src={checkmark} alt="" />
+          <Image src={checkmark} alt="" />
         </div>
         {text}
       </button>
@@ -30,7 +33,7 @@ const MultiAnswerOption = ({ isSelected, text, isRight, isCheckStage }: MultiAns
     return (
       <button className='multi-answer-option--right'>
         <div className='multi-answer-option__circle--right'>
-          <img src={checkmark} alt="" />
+          <Image src={checkmark} alt="" />
         </div>
         {text}
       </button>
@@ -39,7 +42,7 @@ const MultiAnswerOption = ({ isSelected, text, isRight, isCheckStage }: MultiAns
     return (
       <button className='multi-answer-option--wrong'>
         <div className='multi-answer-option__circle--wrong'>
-          <img src={checkmark} alt="" />
+          <Image src={checkmark} alt="" />
         </div>
         {text}
       </button>

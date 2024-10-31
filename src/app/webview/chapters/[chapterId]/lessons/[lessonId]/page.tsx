@@ -62,7 +62,7 @@ const LessonSummary = () => {
                 <div className="lesson-summary__wrapper">
                     <img
                         className={bottomReached ? 'lesson-summary__image--wide' : 'lesson-summary__image'}
-                        src="/public/video.jpg"
+                        src="/video.jpg"
                         alt="lesson video"
                     />
                     <div ref={scrollElRef} className="lesson-summary" onScroll={handleScroll}>

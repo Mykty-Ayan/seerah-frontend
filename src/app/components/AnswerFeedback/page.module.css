@@ -1,4 +1,4 @@
-.answer-feedback {
+.answerFeedback {
   background-color: #DCF5EB;
   border-radius: 10px;
   box-sizing: border-box;
@@ -19,7 +19,7 @@
   right: 24px;
 }
 
-.answer-feedback--wrong {
+.answerFeedbackWrong {
   background-color: #FCE8EC;
   border-radius: 10px;
   box-sizing: border-box;

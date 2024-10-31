@@ -1,4 +1,8 @@
-import './index.css';
+import styles from './page.module.css';
+import checkMarkFeedback from '../../../../public/checkmark_feedback.svg';
+import crossFeedback from '../../../../public/cross_feedback.svg';
+
+import Image from "next/image";
 
 type AnswerFeedbackType = {
   isRight: boolean;
@@ -8,16 +12,16 @@ type AnswerFeedbackType = {
 const AnswerFeedback = ({ isRight, rightAnswer }: AnswerFeedbackType) => {
   if (isRight) {
     return (
-      <div className='answer-feedback'>
-        <img src="/checkmark_feedback.svg" alt="checkmark" />
+      <div className={styles['answerFeedback']}>
+        <Image src={checkMarkFeedback} alt="checkmark" />
         Бұл дұрыс жауап!
       </div>
     )
   }
   return (
     <>
-      <div className='answer-feedback--wrong'>
-        <img src="/cross_feedback.svg" alt="cross" />
+      <div className={styles['answerFeedbackWrong']}>
+        <Image src={crossFeedback} alt="cross" />
         Қателестіңіз. Дұрыс жауабы: {rightAnswer}
       </div>
     </>

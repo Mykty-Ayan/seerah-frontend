@@ -1,6 +1,6 @@
 "use client";
 
-import './page.module.css';
+import styles from './page.module.css';
 import { useAppSelector } from '../../../../../store/hooks';
 import { useRouter, usePathname } from 'next/navigation';
 import { ILesson } from '../../../../../interfaces';
@@ -59,16 +59,16 @@ const LessonSummary = () => {
                 <HeaderWithBackButton header="Lesson not found" />
             )}
             {lesson && (
-                <div className="lesson-summary__wrapper">
+                <div className={styles.lessonSummaryWrapper}>
                     <img
-                        className={bottomReached ? 'lesson-summary__image--wide' : 'lesson-summary__image'}
+                        className={bottomReached ? styles.lessonSummaryImageWide : styles.lessonSummaryImage}
                         src="/video.jpg"
                         alt="lesson video"
                     />
-                    <div ref={scrollElRef} className="lesson-summary" onScroll={handleScroll}>
+                    <div ref={scrollElRef} className={styles.lessonSummary} onScroll={handleScroll}>
                         <LessonSummaryBlock header="Кіріспе:" text={lesson.summary} />
                     </div>
-                    <div className="lesson-summary__button-wrapper">
+                    <div className={styles.lessonSummaryButtonWrapper}>
                         <BeginTestButton isDisabled={!bottomReached} onClick={handleClick} />
                     </div>
                 </div>

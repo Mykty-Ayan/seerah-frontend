@@ -1,6 +1,6 @@
 "use client";
 
-import './page.module.css';
+import styles from './page.module.css';
 import { useAppSelector } from '../../../../../store/hooks';
 import { useRouter, usePathname } from 'next/navigation';
 import { ILesson, IQuestion } from '../../../../../interfaces';
@@ -66,7 +66,7 @@ const LessonTesting = () => {
         <HeaderWithoutBackButton header="Сынақтама бағасы" />
       )}
       {lesson && questionCounter < lesson.questions.length && (
-        <div className="lesson-testing">
+        <div className={styles.lessonTesting}>
           <ProgressBar value={(questionCounter / lesson.questions.length) * 100} />
           {currQuestion && (
             <>
@@ -82,7 +82,7 @@ const LessonTesting = () => {
               />
             </>
           )}
-          <div className={isCheckStage ? 'lesson-testing__button-wrapper--check-stage' : 'lesson-testing__button-wrapper'}>
+          <div className={isCheckStage ? styles.lessonTestingButtonWrapperCheckStage : styles.lessonTestingButtonWrapper}>
             {!isCheckStage && (
               <div onClick={handleCheckStageToggle}>
                 <AcceptButton isActive={isAcceptButtonVisible} />

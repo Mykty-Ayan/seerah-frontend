@@ -1,4 +1,4 @@
-.lesson-testing {
+.lessonTesting {
     display: flex;
     flex-direction: column;
     row-gap: 0px;
@@ -7,7 +7,7 @@
     height: calc(100vh - 40px);
   }
   
-  .lesson-testing__button-wrapper {
+  .lessonTestingButtonWrapper {
     background-color: white;
     min-height: 78px;
     box-sizing: border-box;
@@ -20,7 +20,7 @@
     box-shadow: 0px -2px 19px 0px rgba(0, 0, 0, 0.08);
   }
   
-  .lesson-testing__button-wrapper--check-stage {
+  .lessonTestingButtonWrapperCheckStage {
     background-color: white;
     min-height: 140px;
     box-sizing: border-box;

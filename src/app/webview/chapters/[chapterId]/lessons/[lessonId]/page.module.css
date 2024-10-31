@@ -1,11 +1,11 @@
-.lesson-summary__wrapper {
+.lessonSummaryWrapper {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 40px);
     background-color: #FAF9F7;
   }
   
-  .lesson-summary {
+  .lessonSummary {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
@@ -18,7 +18,7 @@
     white-space: pre-wrap;
   }
   
-  .lesson-summary__image {
+  .lessonSummaryImage {
     box-sizing: border-box;
     padding: 24px;
     padding-bottom: 16px;
@@ -26,7 +26,7 @@
     transition: all 1s ease-out;
   }
   
-  .lesson-summary__image--wide {
+  .lessonSummaryImageWide {
     box-sizing: border-box;
     padding: 4px;
     padding-bottom: 16px;
@@ -34,7 +34,7 @@
     transition: all 1s ease-out;
   }
   
-  .lesson-summary__button-wrapper {
+  .lessonSummaryButtonWrapper {
     box-sizing: border-box;
     padding-top: 16px;
     padding-bottom: 16px;

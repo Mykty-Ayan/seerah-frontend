@@ -18,7 +18,7 @@ export const finishLesson = async (
   }
 ): Promise<any> => {
   const response = await request({
-    url: `/api/v2/lesson/${id}/finish`,
+    url: `/api/v2/lessons/${id}/finish`,
     method: "PUT",
     data: lessonFinishRequest,
     requiresAuth: true,

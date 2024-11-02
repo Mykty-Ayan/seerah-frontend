@@ -1,15 +1,21 @@
 "use client";
 
 import styles from './page.module.css';
-import { useAppSelector } from '../../../../../store/hooks';
+import { useAppSelector, useAppDispatch } from '../../../../../store/hooks';
 import { useRouter, usePathname } from 'next/navigation';
 import { ILesson } from '../../../../../interfaces';
 import React, { useEffect, useRef, useState } from 'react';
 import LessonSummaryBlock from '../../../../../components/LessonSummaryBlock';
 import HeaderWithBackButton from '../../../../../components/HeaderWithBackButton';
 import BeginTestButton from '../../../../../components/BeginTestButton';
+import { fetchChapterLessons } from '../../../../../store/chapterLessonsSlice';
+
+
 
 const LessonSummary = () => {
+    const chapterLessons = useAppSelector((state) => state.chapterLessons.data);
+    const dispatch = useAppDispatch();
+
     const router = useRouter();
     const pathname = usePathname();
     const chapters = useAppSelector((state) => state.lessons.lessons);
@@ -22,7 +28,9 @@ const LessonSummary = () => {
     const lessonId = pathSegments[5];
 
     useEffect(() => {
-        if (chapterId && lessonId) {
+        if (!chapterLessons) {
+            dispatch(fetchChapterLessons());
+        } else if (chapterId && lessonId) {
             const chapter = chapters.find((storeChapter) => storeChapter.id === Number(chapterId));
             if (chapter) {
                 const lesson = chapter.lessons.find((storeLesson) => storeLesson.id === Number(lessonId));
@@ -31,7 +39,8 @@ const LessonSummary = () => {
                 }
             }
         }
-    }, [chapterId, lessonId, chapters]);
+    }
+        , [dispatch, chapterId, lessonId, chapters, chapterLessons]);
 
     useEffect(() => {
         if (scrollElRef.current) {

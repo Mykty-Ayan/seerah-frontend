@@ -3,7 +3,7 @@ import { IChapter, IChapterLesson } from "../interfaces";
 
 export const getChapters = async (): Promise<IChapter[]> => {
   const response = await request({
-    url: "/api/v2/chapter/all",
+    url: "/api/v2/chapters",
     method: "GET",
     requiresAuth: true,
   });
@@ -12,7 +12,7 @@ export const getChapters = async (): Promise<IChapter[]> => {
 
 export const getChapter = async (chapterId: string): Promise<IChapter[]> => {
   const response = await request({
-    url: `/api/v2/chapter/${chapterId}`,
+    url: `/api/v2/chapters/${chapterId}`,
     method: "GET",
     requiresAuth: true,
   });
@@ -21,7 +21,7 @@ export const getChapter = async (chapterId: string): Promise<IChapter[]> => {
 
 export const getChapterLessons = async (): Promise<IChapterLesson> => {
   const response = await request({
-    url: "/api/v2/chapter/lessons",
+    url: "/api/v2/chapters/lessons",
     method: "GET",
     requiresAuth: true,
   });

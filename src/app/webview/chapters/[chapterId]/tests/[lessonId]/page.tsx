@@ -1,7 +1,7 @@
 "use client";
 
 import styles from './page.module.css';
-import { useAppSelector } from '../../../../../store/hooks';
+import { useAppSelector, useAppDispatch } from '../../../../../store/hooks';
 import { useRouter, usePathname } from 'next/navigation';
 import { ILesson, IQuestion } from '../../../../../interfaces';
 import React, { useEffect, useState } from 'react';
@@ -13,11 +13,17 @@ import TestResult from '../../../../../components/TestResult';
 import HeaderWithBackButton from '../../../../../components/HeaderWithBackButton';
 import HeaderWithoutBackButton from '../../../../../components/HeaderWithoutBackButton';
 import NextQuestionButton from '../../../../../components/NextQuestionButton';
+import { fetchChapterLessons } from '../../../../../store/chapterLessonsSlice';
+import { finishLesson } from '../../../../../services/lessonService';
+
 
 const LessonTesting = () => {
+  const dispatch = useAppDispatch();
+
   const router = useRouter();
   const pathname = usePathname();
   const chapters = useAppSelector((state) => state.lessons.lessons);
+  const { data: chapterLesson, status } = useAppSelector((state) => state.chapterLessons);
 
   const pathSegments = pathname.split('/');
   const chapterId = pathSegments[3];
@@ -29,25 +35,50 @@ const LessonTesting = () => {
   const [isAcceptButtonVisible, showAcceptButton] = useState(false);
   const [isCheckStage, toggleCheckStage] = useState(false);
   const [rightAnswersCounter, setRightAnswersCounter] = useState(0);
+  const [isLessonFinished, setIsLessonFinished] = useState(false);
+
 
   useEffect(() => {
-    if (chapterId && lessonId) {
-      const chapter = chapters.find((storeChapter) => storeChapter.id === Number(chapterId));
-      if (chapter) {
-        const localLesson = chapter.lessons.find((lesson) => lesson.id === Number(lessonId));
-        if (localLesson) {
-          setLesson(localLesson);
-          setCurrQuestion(localLesson.questions[questionCounter]);
+    if (status === 'idle') {
+      dispatch(fetchChapterLessons());
+    } else if (status === 'succeeded' && chapterLesson) {
+      if (chapterId && lessonId) {
+        const chapter = chapters.find((storeChapter) => storeChapter.id === Number(chapterId));
+        if (chapter) {
+          const localLesson = chapter.lessons.find((lesson) => lesson.id === Number(lessonId));
+          if (localLesson) {
+            setLesson(localLesson);
+            setCurrQuestion(localLesson.questions[questionCounter]);
+          }
         }
       }
     }
-  }, [chapterId, lessonId, chapters, questionCounter]);
+  }, [dispatch, status, chapterLesson, chapterId, lessonId, chapters, questionCounter]);
 
   useEffect(() => {
-    if (lesson) {
+    if (questionCounter && lesson) {
       setCurrQuestion(lesson.questions[questionCounter]);
     }
   }, [questionCounter, lesson]);
+
+  useEffect(() => {
+    if (lesson && questionCounter >= lesson.questions.length && !isLessonFinished) {
+      const lessonFinishRequest = {
+        correctAnswersCount: rightAnswersCounter,
+        totalAnswersCount: lesson.questions.length,
+      };
+      finishLesson(lesson.id, lessonFinishRequest)
+        .then((response) => {
+          console.log('Lesson finished:', response);
+          // After finishing the lesson, update the state and refetch the chapter lessons
+          setIsLessonFinished(true);
+          dispatch(fetchChapterLessons());
+        })
+        .catch((error) => {
+          console.error('Error finishing lesson:', error);
+        });
+    }
+  }, [lesson, questionCounter, rightAnswersCounter, dispatch, isLessonFinished]);
 
   const handleCheckStageToggle = () => {
     toggleCheckStage(!isCheckStage);

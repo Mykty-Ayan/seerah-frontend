@@ -24,9 +24,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
-    const storedUserId = localStorage.getItem('user_id');
+    // const storedUserId = localStorage.getItem('user_id');
     if (storedToken) setToken(storedToken);
-    if (storedUserId) setUserId(storedUserId);
+    // if (storedUserId) setUserId(storedUserId);
     // Commented out auto-auth code to disable automatic sign-in and sign-up
 
     // const autoAuth = async () => {

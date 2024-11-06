@@ -3,6 +3,7 @@
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 import { signIn, signUp, refreshToken } from '../services/authService';
 import { ISignInRequest, IJwtAuthenticationResponse, ISignUpRequest, SignUpResponse, IRefreshTokenRequest } from '@/app/interfaces';
+import Cookies from 'js-cookie';
 
 interface AuthContextType {
   token: string | null;
@@ -23,10 +24,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [userId, setUserId] = useState<string | null>(null);
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('token');
+    let storedToken = localStorage.getItem('token');
     // const storedUserId = localStorage.getItem('user_id');
+
+    if (!storedToken) {
+      storedToken = Cookies.get("token");
+      if (storedToken) localStorage.setItem("token", storedToken);
+    }
+
     if (storedToken) setToken(storedToken);
-    // if (storedUserId) setUserId(storedUserId);
+        // if (storedUserId) setUserId(storedUserId);
     // Commented out auto-auth code to disable automatic sign-in and sign-up
 
     // const autoAuth = async () => {

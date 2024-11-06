@@ -28,8 +28,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // const storedUserId = localStorage.getItem('user_id');
 
     if (!storedToken) {
-      storedToken = Cookies.get("token");
-      if (storedToken) localStorage.setItem("token", storedToken);
+      const cookieToken = Cookies.get("token");
+      if (cookieToken) {
+        localStorage.setItem("token", cookieToken);
+        storedToken = cookieToken
+      }
     }
 
     if (storedToken) setToken(storedToken);

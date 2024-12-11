@@ -1,22 +1,20 @@
 "use client";
 
-import './index.css';
-import CircularProgressSvg from '@/../public/circular_progress';
-import FinishTestButton from '../FinishTestButton';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 import { useAppDispatch } from '../../store/hooks';
 import { markLessonAsFinished } from '../../store/lessonsSlice';
-import { useRouter } from 'next/navigation'; 
+import {TestResultView} from "./components /TestResultView";
 
 type TestResultType = {
   correctAnswers: number;
   overallAnswers: number;
   chapterId: number;
   lessonId: number;
+  lessonName: string;
 };
 
-const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId }: TestResultType) => {
-  const [dashOffset, setDashOffset] = useState(450);
+const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId, lessonName }: TestResultType) => {
   const dispatch = useAppDispatch();
   const router = useRouter();  
 
@@ -24,32 +22,16 @@ const TestResult = ({ correctAnswers, overallAnswers, lessonId, chapterId }: Tes
     dispatch(markLessonAsFinished({ lessonId, chapterId }));
     router.push('/webview');  
   }
-
-  useEffect(() => {
-    setTimeout(() => {
-      setDashOffset(450 - 450 * (correctAnswers / overallAnswers));
-    }, 800);
-  }, []);
-
   const percentage = ((correctAnswers / overallAnswers) * 100).toFixed(0);
 
-  return (
-    <div className='test-result'>
-      <div className='test-result__progress-and-congrats'>
-        <div className='circular-progress-bar'>
-          <div className='circular-progress-bar__bar'>
-            <div className='circular-progress-bar__values'>
-              <h3 className='circular-progress-bar__percentage'>{percentage}%</h3>
-              <p className='circular-progress-bar__correct-answers'>{correctAnswers}/{overallAnswers}</p>
-            </div>
-          </div>
-          <CircularProgressSvg dashOffset={dashOffset} />
-        </div>
-        <p className='test-result__congrats'>Сынақтан өтуімен <br />құттықтаймыз!</p>
-      </div>
-      <FinishTestButton onClick={clickHandler} />
-    </div>
-  );
+  return <TestResultView
+      percentage={percentage}
+      correctAnswers={correctAnswers}
+      overallAnswers={overallAnswers}
+      onClick={clickHandler}
+      chapterId={chapterId}
+      lessonName={lessonName}
+  />
 };
 
 export default TestResult;

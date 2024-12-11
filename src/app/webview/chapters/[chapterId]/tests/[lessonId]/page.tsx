@@ -131,6 +131,7 @@ const LessonTesting = () => {
         <TestResult
           chapterId={Number(chapterId)}
           lessonId={lesson.id}
+          lessonName={lesson.name}
           correctAnswers={rightAnswersCounter}
           overallAnswers={lesson.questions.length}
         />

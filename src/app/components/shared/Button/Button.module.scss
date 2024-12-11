@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 46px;
+  padding: 14px 24px;
+  border-radius: 100px;
+  background-color: #019156;
+  border: 1px solid  #019156;
+
+  color: white;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+
+  &,
+  * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: #017d45;
+    border-color: #017d45;
+  }
+}

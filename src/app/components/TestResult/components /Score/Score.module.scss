@@ -1,0 +1,15 @@
+.scoreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  border-radius: 10px;
+
+  width: auto;
+  max-width: max-content;
+
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48.41px;
+}

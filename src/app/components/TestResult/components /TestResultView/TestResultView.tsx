@@ -40,7 +40,7 @@ export const TestResultView = ({ percentage, overallAnswers, correctAnswers, onC
                 </div>
             ) : (
                 <div className={styles.container}>
-                    <Image src={failure} alt="failure" />
+                    <Image className ={styles.failureIcon} src={failure} alt="failure" />
                     <div className={styles.failureCase}>
                         <div>
                             <p className={styles.title}>{chapterId}-тарау: {lessonName}</p>

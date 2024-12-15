@@ -44,7 +44,7 @@ export const TestResultView = ({ percentage, overallAnswers, correctAnswers, onC
                     <div className={styles.failureCase}>
                         <div>
                             <p className={styles.title}>{chapterId}-тарау: {lessonName}</p>
-                            <p className={styles.text}>Өкінішке қарай, келесі дәріске өту <br /> үшін нәтижеңіз жеткіліксіз</p>
+                            <p className={styles.text}>Өкінішке қарай, келесі дәріске өту үшін нәтижеңіз жеткіліксіз</p>
                         </div>
                     <Score correctAnswers={correctAnswers}
                            overallAnswers={overallAnswers}

@@ -13,3 +13,19 @@
   font-size: 40px;
   line-height: 48.41px;
 }
+
+@media (min-width: 320px) and (max-width: 400px) {
+  .scoreContainer {
+    padding: 4px 20px;
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 320px) {
+  .scoreContainer {
+    padding: 2px 16px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

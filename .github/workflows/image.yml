@@ -1,0 +1,49 @@
+name: Image
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: image-${{ github.ref }}
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v5
+      # <branch>-<short sha>-<unix time>: Flux picks the newest image by the trailing timestamp.
+      - id: tag
+        run: echo "tag=${GITHUB_REF_NAME//\//-}-${GITHUB_SHA::7}-$(date +%s)" >> "$GITHUB_OUTPUT"
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/mykty-ayan/seerah-frontend:${{ steps.tag.outputs.tag }}
+          labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}
+          sbom: true
+          provenance: mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - uses: actions/attest-build-provenance@v3
+        with:
+          subject-name: ghcr.io/mykty-ayan/seerah-frontend
+          subject-digest: ${{ steps.build.outputs.digest }}
+          push-to-registry: true
